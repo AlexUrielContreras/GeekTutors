@@ -1,5 +1,15 @@
 # GeekTutors
   
+  ## Badges
+  
+  ![badge](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
+  ![badge](https://img.shields.io/badge/Stack_Overflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)
+  ![badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+  ![badge](https://img.shields.io/badge/MongoDb-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+  ![badge](https://img.shields.io/badge/React.js-404D59?style=for-the-badge)
+  
+
+  
   ## Description
   GeekTutor is your best source for web development tutoring and assistance. Each tutor has expertise on a variety of subjects. 
   Users can view articles written by the tutors, and scheule sessions via email.
@@ -9,7 +19,7 @@
   - [Description](#description)
   - [Installation](#installation)
   - [Contributors](#contribute)
-  - [Questions](#Questions)
+  - [questions?](#Questions)
   - [License](#license)
   
   ## Installation
@@ -26,7 +36,7 @@ ________________________________________________________________________________
 
   ## Contributors
   [Contributor Covenant](https://www.contributor-covenant.org/)  
-  Mickie Burch<br/>
+  Mickie Burch
   Alex Contreras  
   Alec Harvey   
   Chris Snyder 
