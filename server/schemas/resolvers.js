@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Tutor, Article } = require('../models');
+const { User, Article } = require('../models');
 const { signToken, authMiddleware } = require('../utils/auth');
 
 const resolvers = {
@@ -65,18 +65,18 @@ const resolvers = {
         return error
       }
     },
-    GetArticlesByUserId:async(parent,{token,Id})=>{
-        try {
-          const user = true
-          if(user){
-            return await Article.find({tutorId:Id})
-          }
-          throw new AuthenticationError("invalid token")
-        } catch (error) {
-          console.log(error);
-          return error
-        }
-    }
+    // GetArticlesByUserId:async(parent,{token,Id})=>{
+    //     try {
+    //       const user = true
+    //       if(user){
+    //         return await Article.find({tutorId:Id})
+    //       }
+    //       throw new AuthenticationError("invalid token")
+    //     } catch (error) {
+    //       console.log(error);
+    //       return error
+    //     }
+    // }
   },
   Mutation: {
     createUser: async (parent, {firstName,lastName,email,password}) => {

@@ -7,8 +7,6 @@ function Article (props){
     const {loading, error, data} = useQuery(GET_ARTICLE_BY_ID,{
         variables:{token:Auth.getToken(),id:props.currentArticle}
     })
-    console.log("DATA: ",data);
-    console.log("PROPS: ",props);
     if (loading) return "LOADING"
     return(
         

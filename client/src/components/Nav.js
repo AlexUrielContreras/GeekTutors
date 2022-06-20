@@ -10,7 +10,6 @@ function NavList(props) {
   const {loading,error,data}=useQuery(GET_CURRENT_USER,{variables:{token:Auth.getToken()||"GUEST"}})
   if (loading) return "LOADING..."
   if (error) console.log(error);
-  console.log(data);
   const logout = event => {
     event.preventDefault()
     Auth.logout();

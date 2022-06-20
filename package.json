@@ -26,6 +26,7 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "jsonwebtoken": "^8.5.1",
     "stripe": "^9.4.0"
   }

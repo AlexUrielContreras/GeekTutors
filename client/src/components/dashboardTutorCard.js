@@ -2,7 +2,6 @@ import React from "react"
 import {Card, Col } from "react-bootstrap";
 import Auth from "../utils/auth"
 function TutorCard(props){
-    console.log("props",props);
     const renderSaveButton=()=>{
         try {
             if(Auth.loggedIn()){            

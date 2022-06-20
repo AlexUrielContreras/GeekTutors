@@ -54,7 +54,6 @@ function App() {
 				return null;
 		}
 	};
-	console.log(currentTab)
 	return (
 		<ApolloProvider client={client}>
 			<Router>

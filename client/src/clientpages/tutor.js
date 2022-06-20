@@ -5,13 +5,10 @@ import { MeetingLink } from "./meetingLink";
 import {GET_CURRENT_USER} from "../utils/queries"
 import Auth from "../utils/auth";
 function Tutor(props) {
-  console.log(props);
-  console.log(Auth.getToken());
   const {loading, error, data, refetch} =useQuery(GET_CURRENT_USER,{variables:{token:Auth.getToken()}})
   if (loading) return "LOADING..."
   if (error) return `ERROR: ${error}`
   if (!data.GetCurrentUser.selectedTutor) refetch()
-  console.log("tutor is fetching user data: ",data.GetCurrentUser);
   return (
     <Container>
       <Row className='mt-5'>

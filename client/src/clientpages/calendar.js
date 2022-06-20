@@ -10,7 +10,6 @@ function GeekCalendar() {
     
     <div>
       <Calendar onChange={onChange} value={value} />
-      {console.log(value)}
     </div>
     
   );
