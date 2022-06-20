@@ -3,8 +3,8 @@ import { useQuery } from "@apollo/client";
 // import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
-import Auth from '../../utils/auth'
-import { GET_CURRENT_USER } from "../../utils/queries"
+import Auth from '../utils/auth'
+import { GET_CURRENT_USER } from "../utils/queries"
 function NavList(props) {
   const { currentTab, setCurrentTab } = props;
   const {loading,error,data}=useQuery(GET_CURRENT_USER,{variables:{token:Auth.getToken()||"GUEST"}})

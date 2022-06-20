@@ -1,6 +1,6 @@
 import React from "react"
 import { useQuery } from "@apollo/client"
-import { Card, Container, Row, Col, CardGroup } from "react-bootstrap"
+import { Card, Container} from "react-bootstrap"
 import { GET_ARTICLE_BY_ID } from "../utils/queries"
 import Auth from "../utils/auth"
 function Article (props){
