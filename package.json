@@ -1,0 +1,32 @@
+{
+  "name": "geektutors",
+  "homepage": "https://github.com/MickieBurch/GeekTutors#readme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build",
+    "start": "node server/server.js",
+    "seed": "cd server && npm run seed && cd ../"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MickieBurch/GeekTutors.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MickieBurch/GeekTutors/issues"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "stripe": "^9.4.0"
+  }
+}
