@@ -68,9 +68,16 @@ function App() {
 					<hr></hr>
 				</Container>
 				<Container fluid>
-					<main>{renderTab()}</main>
+					<main>
+						{renderTab()}
+					</main>
 				</Container>
-				<Footer />
+				{currentTab === 'home' ? (
+					<Footer />
+				): (
+					null
+				)}
+				
 			</Router>
 		</ApolloProvider>
 	);

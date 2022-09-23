@@ -24,7 +24,7 @@ function TutorCard(props) {
     }
 
     return (
-        <Col lg={3} sm={`12`} >
+        <Col lg={3} sm={`12`} mb={2}>
             <Card style={{ width: "18rem" }} border='dark' className='mx-auto  mt-2' data-tutorId={props.element._id}>
                 <Card.Img variant="top" src={props.element.image} />
                 <Card.Body>

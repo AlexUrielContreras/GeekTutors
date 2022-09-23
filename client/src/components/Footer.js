@@ -8,9 +8,8 @@ function Footer() {
         return <li className='border-end border-start' key={link[0]}><a href={link[1]} className='footer-a'>{link[0]}</a></li>
     }
 
-
     return (
-        <footer className='fixed-bottom'>
+        <footer >
             <div>
                 <nav>
                     <ul className='d-flex justify-content-center mt-5'>
