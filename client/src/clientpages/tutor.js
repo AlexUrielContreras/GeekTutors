@@ -1,14 +1,16 @@
 import React from "react";
-import {useQuery} from "@apollo/client"
+import { useQuery } from "@apollo/client"
 import { Card, Container, Row, Col } from "react-bootstrap"
 import { MeetingLink } from "./meetingLink";
-import {GET_CURRENT_USER} from "../utils/queries"
+import { GET_CURRENT_USER } from "../utils/queries"
 import Auth from "../utils/auth";
+
 function Tutor(props) {
-  const {loading, error, data, refetch} =useQuery(GET_CURRENT_USER,{variables:{token:Auth.getToken()}})
+  const { loading, error, data, refetch } = useQuery(GET_CURRENT_USER, { variables: { token: Auth.getToken() } })
   if (loading) return "LOADING..."
   if (error) return `ERROR: ${error}`
-  if (!data.GetCurrentUser.selectedTutor) refetch()
+  if (!data.GetCurrentUser.selectedTutor) refetch();
+
   return (
     <Container>
       <Row className='mt-5'>
@@ -20,17 +22,17 @@ function Tutor(props) {
               <Card.Text>Articles by {data.GetCurrentUser.selectedTutor.firstName}</Card.Text>
             </Card.Body>
             <div className="list-group">
-              {data.GetCurrentUser.selectedTutor.articles.map(element=>(
-                  <a
-                  onClick={(e)=>{
+              {data.GetCurrentUser.selectedTutor.articles.map(element => (
+                <a
+                  onClick={(e) => {
                     e.preventDefault()
                     props.setCurrentArticle(element._id)
                     props.setCurrentTab("article")
                   }}
-                className="list-group-item list-group-item-action">
-                    {element.name}
-                  </a>
-                ))
+                  className="list-group-item list-group-item-action">
+                  {element.name}
+                </a>
+              ))
               }
             </div>
           </Card>
@@ -45,7 +47,7 @@ function Tutor(props) {
             </Card.Body>
           </Card>
         </Col>
-       
+
         <Col>
           <MeetingLink />
         </Col>

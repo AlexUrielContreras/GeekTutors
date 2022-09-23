@@ -1,42 +1,52 @@
 * {
   box-sizing: border-box
 }
+
 body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
   letter-spacing: 1px;
   background-color: #dadada;
 }
+
 hr {
   width: 50vw;
   margin: 0 auto
 }
+
 nav a {
   margin: 0 30px
 }
+
 .logo {
   margin: 6px 0;
   padding-right: 15px;
 }
+
 .db-header {
   display: flex;
   justify-content: center;
 }
+
 .logout-btn {
   background-color: #dadada
 }
+
 button {
   border: none;
   padding: 0
 } 
+
 footer {
   height: 13vh;
   background-color: grey
 }
+
 footer li {
   list-style: none;
   
 }
+
 .footer-a {
   color: black;
   text-decoration: none
