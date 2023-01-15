@@ -1,6 +1,5 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-// import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import Auth from '../utils/auth';
@@ -10,7 +9,7 @@ function NavList(props) {
   const { currentTab, setCurrentTab } = props;
   const { loading, error, data } = useQuery(GET_CURRENT_USER, { variables: { token: Auth.getToken() || "GUEST" } });
 
-  if (loading) return "LOADING..."
+  if (loading) return "LOADING...";
   if (error) console.log(error);
 
   const logout = event => {
@@ -45,9 +44,9 @@ function NavList(props) {
   return (
     <Navbar collapseOnSelect fill activekey={currentTab} >
       <Navbar.Toggle />
-      <Navbar.Collapse className="justify-content-center fs-5">
+      <Navbar.Collapse className="fs-4">
         <Nav activeKey={currentTab} onSelect={setCurrentTab} >
-          <Nav.Item>
+          <Nav.Item >
             <Nav.Link onClick={() => setCurrentTab("home")} eventKey="home" >
               Home
             </Nav.Link>

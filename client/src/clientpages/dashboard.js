@@ -49,7 +49,7 @@ function Dashboard(props) {
       {Auth.loggedIn() ? (
         <h1 className="text-center">Available Tutors</h1>
       ) : (
-        <h1 className='text-center'>Create an Account to Schedule a Session</h1>
+        <h1 className='text-center'>Create an Account Today and Schedule a Session</h1>
       )}
       {/* <Row className='mt-4'> */}
      {/* </Container>   {tutorQuery.data.GetAllTutors.map(element=>(dashboardTutorCard({element,props,userQuery,enrollStudentFunction,unenrollStudentFunction})))} */}

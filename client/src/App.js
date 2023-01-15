@@ -65,18 +65,15 @@ function App() {
 			<Router>
 				<Container fluid>
 					<Header currentTab={currentTab} setCurrentTab={setCurrentTab}></Header>
-					<hr></hr>
 				</Container>
 				<Container fluid>
 					<main>
 						{renderTab()}
 					</main>
 				</Container>
-				{currentTab === 'home' ? (
-					<Footer />
-				): (
-					null
-				)}
+				
+				<Footer />
+				
 				
 			</Router>
 		</ApolloProvider>
