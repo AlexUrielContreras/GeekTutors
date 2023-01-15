@@ -1,4 +1,10 @@
-const mongoose= require("mongoose")
+const mongooes = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/test')
-module.exports=mongoose.connection
+mongooes.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/geek-tutor', {
+   useNewUrlParser: true,
+   useUnifiedTopology: true
+}).catch(
+   error => handleError(error)
+);
+
+module.exports = mongooes.connection
