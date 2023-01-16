@@ -63,18 +63,13 @@ function App() {
 	return (
 		<ApolloProvider client={client}>
 			<Router>
-				<Container fluid>
-					<Header currentTab={currentTab} setCurrentTab={setCurrentTab}></Header>
-				</Container>
-				<Container fluid>
-					<main>
-						{renderTab()}
-					</main>
-				</Container>
+				<Header currentTab={currentTab} setCurrentTab={setCurrentTab} />
 				
-				<Footer />
-				
-				
+				<main>
+					{renderTab()}
+				</main>
+		
+				<Footer />				
 			</Router>
 		</ApolloProvider>
 	);

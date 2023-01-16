@@ -44,7 +44,7 @@ function NavList(props) {
   return (
     <Navbar collapseOnSelect fill activekey={currentTab} >
       <Navbar.Toggle />
-      <Navbar.Collapse className="fs-4">
+      <Navbar.Collapse className="fs-4 semi-bold-text">
         <Nav activeKey={currentTab} onSelect={setCurrentTab} >
           <Nav.Item >
             <Nav.Link onClick={() => setCurrentTab("home")} eventKey="home" >
