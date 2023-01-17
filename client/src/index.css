@@ -19,7 +19,7 @@ html, body {
 }
 
 .main-header {
-  box-shadow: 2px 2px 15px 2px rgb(70, 68, 68)
+  box-shadow: 0 2px 15px 2px rgb(70, 68, 68)
 }
 
 .header-brand {
@@ -46,6 +46,20 @@ html, body {
   justify-content: center
 }
 
+.body-title {
+  font-size: clamp(25px, 5vw, 3rem);
+  margin: 4vh 0
+}
+
+.tutor-cards {
+  max-width: 80vw;
+  margin-bottom: 7vh
+}
+
+.card-subtitle {
+  letter-spacing: .2px
+}
+
 .logout-btn {
   background-color: #dadada
 }
@@ -56,7 +70,7 @@ button {
 } 
 
 footer {
-
+  
   bottom: 0;
   min-width: 100%;
   background-color: grey

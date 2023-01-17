@@ -14,7 +14,6 @@ import LoginForm from './clientpages/LoginForm';
 import SignupForm from './clientpages/SignupForm';
 import Article from "./clientpages/article"
 
-import { Container } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import 'react-calendar/dist/Calendar.css';
@@ -64,7 +63,7 @@ function App() {
 		<ApolloProvider client={client}>
 			<Router>
 				<Header currentTab={currentTab} setCurrentTab={setCurrentTab} />
-				
+
 				<main>
 					{renderTab()}
 				</main>
