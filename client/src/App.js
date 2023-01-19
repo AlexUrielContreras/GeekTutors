@@ -62,13 +62,15 @@ function App() {
 	return (
 		<ApolloProvider client={client}>
 			<Router>
-				<Header currentTab={currentTab} setCurrentTab={setCurrentTab} />
+				<div className='layout-container'>
+					<Header currentTab={currentTab} setCurrentTab={setCurrentTab} />
 
-				<main>
-					{renderTab()}
-				</main>
-		
-				<Footer />				
+					<main>
+						{renderTab()}
+					</main>
+			
+					<Footer />	
+				</div>			
 			</Router>
 		</ApolloProvider>
 	);
