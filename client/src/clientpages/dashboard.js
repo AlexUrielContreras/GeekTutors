@@ -5,7 +5,7 @@ import Auth from '../utils/auth'
 import { GET_ALL_TUTORS, GET_CURRENT_USER } from "../utils/queries"
 import { ENROLL_STUDENT, UNENROLL_STUDENT } from "../utils/mutations";
 
-import DashboardTutorCard from "../components/dashboardTutorCard";
+import DashboardTutorCard from "../components/DashboardTutorCard";
 
 function Dashboard(props) {
 

@@ -10,6 +10,14 @@ html, body {
   background-color: #dadada;
 }
 
+ol, ul {
+  padding: 0
+}
+
+li {
+  list-style: none
+}
+
 .bold-text {
   font-weight: 700
 }
@@ -70,15 +78,8 @@ button {
 } 
 
 footer {
-  
-  bottom: 0;
   min-width: 100%;
   background-color: grey
-}
-
-footer li {
-  list-style: none;
-  
 }
 
 .footer-a {
@@ -113,4 +114,33 @@ footer li {
   border-radius: 2%;
 }
 
+.footer-div {
+  font-size: .9rem
+}
+
+.footer-links {
+  padding: 0 5vw
+}
+
+.footer-links:nth-child(2) {
+  border-right: 2px solid white;
+  border-left: 2px solid white
+}
+
+.footer-links:nth-child(3) {
+  border-right: 2px solid white;
+}
+
+
+
+@media screen and (min-width: 991px) {
+  footer {
+    position: fixed; 
+    bottom: 0
+  }
+
+  .footer-links {
+    padding: 0 10vw
+  }
+}
 
