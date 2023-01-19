@@ -1,5 +1,5 @@
 import { useQuery, useMutation } from "@apollo/client";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row} from "react-bootstrap";
 import Auth from '../utils/auth'
 
 import { GET_ALL_TUTORS, GET_CURRENT_USER } from "../utils/queries"
@@ -39,22 +39,18 @@ function Dashboard(props) {
   const userQuery = useQuery(GET_CURRENT_USER,{variables:{token:Auth.getToken()||"GUEST"}});
   const tutorQuery = useQuery(GET_ALL_TUTORS);
 
-  console.log(tutorQuery);
-  console.log(userQuery)
-
   if (userQuery.loading || tutorQuery.loading) return "LOADING";
   if (userQuery.error) console.log(JSON.stringify(userQuery.error));
   if (tutorQuery.error) console.log(tutorQuery.error);
   
   return (
-    <Container>
+    <Container fluid>
       <h1 className='text-center body-title semi-bold-text'>{Auth.loggedIn() ? ( 'Available Tutors' ): ( 'Create an Account Today and Schedule a Session' )}</h1>
      
-      <Row className='mt-4'>
-        {tutorQuery.data?.GetAllTutors.map(tutor => <DashboardTutorCard tutor={tutor} currentUser={userQuery} enrollStudent={enrollStudentFunction} unenrollStudent={unenrollStudentFunction} />)}
+      <Row sm={2} md={3} lg={5} className='justify-content-center'>
+        {tutorQuery.data?.GetAllTutors.map(tutor => <DashboardTutorCard key={tutor._id} tutor={tutor} currentUser={userQuery} enrollStudent={enrollStudentFunction} unenrollStudent={unenrollStudentFunction} />)}
       </Row>
     </Container>
-
   );
 }
 
