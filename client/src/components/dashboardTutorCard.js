@@ -3,14 +3,14 @@ import { Card } from "react-bootstrap";
 import Auth from "../utils/auth";
 
 function DashboardTutorCard({tutor, currentUser, enrollStudent, unenrollStudent}) {
-  
 
+    const { data } = currentUser
+  
     const renderSaveButton = () => {
         try {
-
             if (Auth.loggedIn()) {
 
-                if (currentUser.GetCurrentUser.selectedTutor == null || currentUser.GetCurrentUser.selectedTutor._id !== tutor._id) {
+                if (data.GetCurrentUser.selectedTutor == null || data.GetCurrentUser.selectedTutor._id !== tutor._id) {
                     return <button onClick={(e) => {
                         e.preventDefault();
                         enrollStudent(tutor._id)
@@ -32,6 +32,7 @@ function DashboardTutorCard({tutor, currentUser, enrollStudent, unenrollStudent}
     }
 
     return (
+
         <Card border='dark' className='px-0 mx-4 tutor-cards' data-tutorid={tutor._id}>
             <Card.Img variant="top" src={tutor.image} />
 
@@ -42,8 +43,10 @@ function DashboardTutorCard({tutor, currentUser, enrollStudent, unenrollStudent}
 
             <div className="list-group">
                 {tutor.subjectsOffered.map(subjects => (<li className="list-group-item list-group-item-disabled">{subjects}</li>))}
-            </div>  
+            </div>
+            {renderSaveButton()}  
         </Card>
+
     )
 }
 export default DashboardTutorCard
