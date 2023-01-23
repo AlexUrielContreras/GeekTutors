@@ -8,8 +8,9 @@ import Auth from '../utils/auth';
 
 const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+  const [errorMessage, setErrorMessage] = useState(false);
   const [validated, setValidated] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
+
   const [ logIn , {error}] = useMutation(LOGIN)
 
   const handleInputChange = (event) => {
@@ -26,32 +27,26 @@ const LoginForm = () => {
       event.preventDefault();
       event.stopPropagation();
     }
+
     setValidated(true)
     
     try {
       const {data} = await logIn({
         variables: {...userFormData}
       })
-      console.log(data)
+
       Auth.login(data.login.token);
+
     } catch (e) {
-      console.log(e)
+      setErrorMessage(true)
+      console.log(e);
     }
 
-    setUserFormData({
-      username: '',
-      email: '',
-      password: '',
-    });
   };
 
   return (
     <>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit} className='login-form'>
-
-        <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
-          Something went wrong with your login credentials!
-        </Alert>
 
         <Form.Group className='my-3'>
           <Form.Label htmlFor='email' className='form-label semi-bold-text'>Email</Form.Label>
@@ -74,11 +69,15 @@ const LoginForm = () => {
             name='password'
             onChange={handleInputChange}
             value={userFormData.password}
+            onFocus={() => {
+              setErrorMessage(false)
+              setValidated(false)
+            }}
             required
           />
-          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+        <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
-        {error && <div>Login Failed!</div>}
+        {error && errorMessage && <div className='login-error semi-bold-text'>Incorrect Credentials</div>}
         <Button
          className='mt-3'
           type='submit'

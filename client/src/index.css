@@ -89,6 +89,12 @@ li {
   background-color: #dadada
 }
 
+.login-error {
+  margin-top: 1.5vh;
+  color: rgb(235, 75, 75);
+  font-size: 1.2rem
+}
+
 button {
   border: none;
   padding: 0
