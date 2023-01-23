@@ -1,42 +1,52 @@
 import React from "react"
-import { Card, Col } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import Auth from "../utils/auth";
 
-function TutorCard(props) {
+function DashboardTutorCard({tutor, currentUser, enrollStudent, unenrollStudent}) {
+
+    const { data } = currentUser
+  
     const renderSaveButton = () => {
         try {
             if (Auth.loggedIn()) {
-                if (props.userQuery.data.GetCurrentUser.selectedTutor == null || props.userQuery.data.GetCurrentUser.selectedTutor._id !== props.element._id) {
+
+                if (data.GetCurrentUser.selectedTutor == null || data.GetCurrentUser.selectedTutor._id !== tutor._id) {
                     return <button onClick={(e) => {
                         e.preventDefault();
-                        const updatedUser = props.enrollStudentFunction(props.element._id)
+                        enrollStudent(tutor._id)
                     }}>Save</button>
+
                 } else {
+
                     return <button onClick={(e) => {
                         e.preventDefault();
-                        const updatedUser = props.unenrollStudentFunction(props.element._id)
-                    }}>Unenroll</button>
+                        unenrollStudent(tutor._id)
+                    }}> Unenroll </button>
+                    
                 }
             }
+
         } catch (error) {
             console.log("ERROR:", error);
         }
     }
 
     return (
-        <Col lg={3} sm={`12`} mb={2}>
-            <Card style={{ width: "18rem" }} border='dark' className='mx-auto  mt-2' data-tutorId={props.element._id}>
-                <Card.Img variant="top" src={props.element.image} />
-                <Card.Body>
-                    <Card.Title>{props.element.firstName} {props.element.lastName}</Card.Title>
-                    <Card.Text>Subjects offered:</Card.Text>
-                </Card.Body>
-                <div className="list-group">
-                    {props.element.subjectsOffered.map(element => (<li className="list-group-item list-group-item-disabled">{element}</li>))}
-                </div>
-                {renderSaveButton()}
-            </Card>
-        </Col>
+
+        <Card border='dark' className='px-0 mx-4 tutor-cards' data-tutorid={tutor._id}>
+            <Card.Img variant="top" src={tutor.image} />
+
+            <Card.Body>
+                <Card.Title className='bold-text' >{tutor.firstName} {tutor.lastName}</Card.Title>
+                <Card.Text className='semi-bold-text card-subtitle'>Subjects offered:</Card.Text>
+            </Card.Body>
+
+            <div className="list-group">
+                {tutor.subjectsOffered.map(subjects => (<li className="list-group-item list-group-item-disabled">{subjects}</li>))}
+            </div>
+            {renderSaveButton()}  
+        </Card>
+
     )
 }
-export default TutorCard
+export default DashboardTutorCard

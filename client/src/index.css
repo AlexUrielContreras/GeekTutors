@@ -1,41 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+
 * {
   box-sizing: border-box
 }
 
-html, body {
-  margin: 0;
+body {
   padding: 0;
-  font-family: 'Raleway', sans-serif;
+  margin: 0;
   background-color: #dadada;
+}
+
+.layout-container {
+  font-family: 'Raleway', sans-serif;
   min-height: 100vh;
-  
-}
-
-#root {
-  min-height: 100%;
-}
-
-hr {
-  width: 50vw;
-  margin: 0 auto
-}
-
-nav a {
-  margin: 0 30px
-}
-
-.logo {
-  margin: 6px 0;
-  padding-right: 15px;
-}
-
-.db-header {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+
+ol, ul {
+  padding: 0
+}
+
+li {
+  list-style: none
+}
+
+.bold-text {
+  font-weight: 700
+}
+
+.semi-bold-text {
+  font-weight: 600
+}
+
+.main-header {
+  box-shadow: 0 2px 15px 2px rgb(70, 68, 68)
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.header-img {
+  width: 5rem;
+  padding: 5px
+}
+
+.header-brand h1 {
+  font-size: 2.5rem;
+  margin: 0
+}
+
+.main-header > nav a {
+  margin: 0 3vw 
+}
+
+.navbar-collapse {
+  justify-content: center
+}
+
+.body-title {
+  font-size: clamp(25px, 5vw, 3rem);
+  margin: 4vh 0
+}
+
+.tutor-cards {
+  max-width: 80vw;
+  margin-bottom: 7vh
+}
+
+.card-subtitle {
+  letter-spacing: .3px
+}
+
+.signup-form, .login-form {
+  max-width: 60vw;
+  margin: 5vh auto;
+}
+
+.form-label {
+  margin: 0;
+  font-size: clamp(18px, 1.2vw, 30px) 
 }
 
 .logout-btn {
   background-color: #dadada
+}
+
+.login-error {
+  margin-top: 1.5vh;
+  color: rgb(235, 75, 75);
+  font-size: 1.2rem
 }
 
 button {
@@ -44,20 +101,17 @@ button {
 } 
 
 footer {
-  position: fixed;
-  bottom: 0;
-  min-width: 100%;
-  background-color: grey
-}
-
-footer li {
-  list-style: none;
-  
+  margin-top: auto;
+  background-color: rgb(109, 105, 105)
 }
 
 .footer-a {
   color: black;
   text-decoration: none
+}
+
+.footer-a:hover {
+  color: white
 }
 
 .scheduler {
@@ -87,16 +141,19 @@ footer li {
   border-radius: 2%;
 }
 
-@media screen and (max-width: 600px) {
-  nav a {
-    margin : 0
-  }
- 
+.footer-div {
+  font-size: .9rem
 }
 
-@media screen and (max-width: 950px) {
-  footer {
-    position:unset
-  }
- 
+.footer-links {
+  padding: 0 4vw
+}
+
+.footer-links:nth-child(2) {
+  border-right: 2px solid white;
+  border-left: 2px solid white
+}
+
+.footer-links:nth-child(3) {
+  border-right: 2px solid white;
 }

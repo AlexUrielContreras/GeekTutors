@@ -1,18 +1,16 @@
 import { useQuery, useMutation } from "@apollo/client";
-import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row} from "react-bootstrap";
 import Auth from '../utils/auth'
-
-
 
 import { GET_ALL_TUTORS, GET_CURRENT_USER } from "../utils/queries"
 import { ENROLL_STUDENT, UNENROLL_STUDENT } from "../utils/mutations";
 
-import dashboardTutorCard from "../components/dashboardTutorCard"
+import DashboardTutorCard from "../components/DashboardTutorCard";
+
 function Dashboard(props) {
 
-  const [enrollStudent, error1] = useMutation(ENROLL_STUDENT)
-  const [unenrollStudent, error] = useMutation(UNENROLL_STUDENT)
+  const [enrollStudent, error1] = useMutation(ENROLL_STUDENT);
+  const [unenrollStudent, error] = useMutation(UNENROLL_STUDENT);
 
   const enrollStudentFunction = async (tutorId) => {
     try {
@@ -24,7 +22,7 @@ function Dashboard(props) {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const unenrollStudentFunction = async (tutorId) => {
     try {
@@ -36,29 +34,23 @@ function Dashboard(props) {
     } catch (error) {
       console.log(error);
     }
-  }
-  const userQuery = useQuery(GET_CURRENT_USER,{variables:{token:Auth.getToken()||"GUEST"}})
-  const tutorQuery=useQuery(GET_ALL_TUTORS)
+  };
 
-  if (userQuery.loading||tutorQuery.loading) return "LOADING"
+  const userQuery = useQuery(GET_CURRENT_USER,{variables:{token:Auth.getToken()||"GUEST"}});
+  const tutorQuery = useQuery(GET_ALL_TUTORS);
+
+  if (userQuery.loading || tutorQuery.loading) return "LOADING";
   if (userQuery.error) console.log(JSON.stringify(userQuery.error));
   if (tutorQuery.error) console.log(tutorQuery.error);
   
   return (
-    <Container className='mt-4'>
-      {Auth.loggedIn() ? (
-        <h1 className="text-center">Available Tutors</h1>
-      ) : (
-        <h1 className='text-center'>Create an Account to Schedule a Session</h1>
-      )}
-      {/* <Row className='mt-4'> */}
-     {/* </Container>   {tutorQuery.data.GetAllTutors.map(element=>(dashboardTutorCard({element,props,userQuery,enrollStudentFunction,unenrollStudentFunction})))} */}
-      {/* </Row> */}
-      <Row className='mt-4'>
-        {tutorQuery.data.GetAllTutors.map(element => (dashboardTutorCard({ element, props, userQuery, enrollStudentFunction, unenrollStudentFunction })))}
+    <Container fluid>
+      <h1 className='text-center body-title semi-bold-text'>{Auth.loggedIn() ? ( 'Available Tutors' ): ( 'Create an Account Today and Schedule a Session' )}</h1>
+     
+      <Row sm={2} md={3} lg={5} className='justify-content-center'>
+        {tutorQuery.data?.GetAllTutors.map(tutor => <DashboardTutorCard key={tutor._id} tutor={tutor} currentUser={userQuery} enrollStudent={enrollStudentFunction} unenrollStudent={unenrollStudentFunction} />)}
       </Row>
     </Container>
-
   );
 }
 
