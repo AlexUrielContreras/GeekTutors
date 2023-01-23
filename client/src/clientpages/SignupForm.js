@@ -112,7 +112,7 @@ function SignupForm() {
           />
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
-        {error && <div>Sign Up Failed!</div>}
+      
         <Button
           className='mt-3'
           type='submit'
