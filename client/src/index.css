@@ -62,7 +62,7 @@ li {
 }
 
 .body-title {
-  font-size: clamp(25px, 5vw, 3rem);
+  font-size: clamp(1.7rem, 4.5vw, 3rem);
   margin: 4vh 0
 }
 
@@ -123,16 +123,6 @@ footer {
 .schedulertextarea {
   width: 25rem;
   height: 10rem;
-  border-radius: 2%;
-}
-
-.tutorcard {
-  height: 30rem;
-  border-radius: 2%;
-}
-
-.tutorbio {
-  height: 30rem;
   border-radius: 2%;
 }
 
