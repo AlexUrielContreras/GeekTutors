@@ -75,6 +75,16 @@ li {
   letter-spacing: .3px
 }
 
+.signup-form, .login-form {
+  max-width: 60vw;
+  margin: 5vh auto;
+}
+
+.form-label {
+  margin: 0;
+  font-size: clamp(18px, 1.2vw, 30px) 
+}
+
 .logout-btn {
   background-color: #dadada
 }
@@ -130,7 +140,7 @@ footer {
 }
 
 .footer-links {
-  padding: 0 5vw
+  padding: 0 4vw
 }
 
 .footer-links:nth-child(2) {

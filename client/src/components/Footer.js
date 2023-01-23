@@ -15,7 +15,7 @@ function Footer() {
                 </ul>
             </nav>
       
-            <Container fluid className='p-1'>
+            <Container fluid className='p-1 text-center'>
                 <span className='footer-div bold-text'> &copy; GeekTutor 2022 - (we are not actually copyrighted. This is for demo purposes)</span>
                 <br />
                 <span className='footer-div'><a className='footer-a' href="https://www.flaticon.com/free-icons/nerd" title="nerd icons">Nerd icons created by Freepik - Flaticon</a></span>
