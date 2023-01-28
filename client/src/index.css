@@ -33,6 +33,10 @@ li {
   font-weight: 500
 }
 
+hr {
+  margin-top: 0
+}
+
 .main-header {
   box-shadow: 0 2px 15px 2px rgb(70, 68, 68)
 }
@@ -89,7 +93,6 @@ li {
   background-color: #dadada
 }
 
-
 .login-error {
   margin-top: 1.5vh;
   color: rgb(235, 75, 75);
@@ -100,6 +103,40 @@ button {
   border: none;
   padding: 0
 } 
+
+.tutor-card-headings{
+  margin-top: 2vh
+}
+
+.selected-tutor-card {
+  padding: 0
+}
+
+.scheduler {
+  background-color: grey;
+  padding: 1.7rem .5rem;
+  border-radius: 2%;
+  max-width: 80vw
+}
+
+.schedule-message {
+  min-width: 100%
+}
+
+.schedule-date {
+  cursor: pointer
+}
+
+.scheduler-textarea {
+  border-radius: 2%;
+  min-width: 100%;
+  resize: none
+}
+
+.tutorarticle {
+  height: 30rem;
+  border-radius: 2%;
+}
 
 footer {
   margin-top: auto;
@@ -113,36 +150,6 @@ footer {
 
 .footer-a:hover {
   color: white
-}
-
-.tutor-card-headings{
-  margin-top: 2vh
-}
-
-.selected-tutor-card {
-  padding: 0
-}
-
-.scheduler {
-  background-color: grey;
-  padding: 1.7rem 1rem;
-  border-radius: 2%;
-  max-width: 80vw
-}
-
-.schedule-message {
-  min-width: 100%
-}
-
-.schedulertextarea {
-  border-radius: 2%;
-  min-width: 100%;
-  resize: none
-}
-
-.tutorarticle {
-  height: 30rem;
-  border-radius: 2%;
 }
 
 .footer-div {

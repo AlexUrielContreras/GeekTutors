@@ -12,7 +12,7 @@ function Tutor(props) {
   if (!data.GetCurrentUser.selectedTutor) refetch();
 
   return (
-    <Container className='mt-5'>
+    <Container className='mt-4'>
       <Row lg={2} className='justify-content-around align-items-center'>
 
         <Card style={{ width: "20rem" }} className='selected-tutor-card'>

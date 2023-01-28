@@ -1,9 +1,10 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import DatePicker from "react-datepicker";
+import { Container, Form, Button, Card } from "react-bootstrap";
+
 import "react-datepicker/dist/react-datepicker.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Form, Button, Card } from "react-bootstrap";
 import "../index.css";
 
 export const MeetingLink = () => {
@@ -32,13 +33,19 @@ export const MeetingLink = () => {
   };
 
   return (
-    <Card className="scheduler my-5" >
+    <Card className="scheduler my-5">
+
       <Container>
-        <h5>Schedule a session with tutor</h5>
+        <h2 className='semi-bold-text'>Schedule a session with tutor</h2>
+
+        <hr />
+
         <Form ref={form} onSubmit={sendEmail}>
+
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Select Date</Form.Label>
+            <Form.Label className='semi-bold-text'>Select Date</Form.Label>
             <DatePicker
+              className='schedule-date'
               selected={startDate}
               onChange={(date) => setStartDate(date)}
               name="date"
@@ -49,23 +56,28 @@ export const MeetingLink = () => {
               showTimeInput
             />
           </Form.Group>
+
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Name</Form.Label>
+            <Form.Label className='semi-bold-text'>Name</Form.Label>
             <Form.Control type="text" name="name" placeholder="Enter Name" />
           </Form.Group>
+
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email</Form.Label>
+            <Form.Label className='semi-bold-text'>Email</Form.Label>
             <Form.Control type="email" name="email" placeholder="Enter Email" />
           </Form.Group>
+
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Message</Form.Label>
+            <Form.Label className='semi-bold-text'>Message</Form.Label>
             <div className='schedule-message'>
-              <textarea className="schedulertextarea" type="text-area" rows="5" placeholder="Enter message" name="message"/>
+              <textarea className="scheduler-textarea" type="text-area" rows="5" placeholder="Enter message" name="message"/>
             </div>
           </Form.Group>
+
           <Button variant="primary" type="submit">
             Submit
           </Button>
+          
         </Form>
       </Container>
     </Card>
