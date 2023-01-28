@@ -32,7 +32,7 @@ export const MeetingLink = () => {
   };
 
   return (
-    <Card className="scheduler">
+    <Card className="scheduler my-5" >
       <Container>
         <h5>Schedule a session with tutor</h5>
         <Form ref={form} onSubmit={sendEmail}>
@@ -59,7 +59,9 @@ export const MeetingLink = () => {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Message</Form.Label>
-            <textarea className="schedulertextarea" type="text-area" rows="5" placeholder="Enter message" name="message"/>
+            <div className='schedule-message'>
+              <textarea className="schedulertextarea" type="text-area" rows="5" placeholder="Enter message" name="message"/>
+            </div>
           </Form.Group>
           <Button variant="primary" type="submit">
             Submit

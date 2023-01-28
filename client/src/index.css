@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
 
 * {
   box-sizing: border-box
@@ -30,7 +30,7 @@ li {
 }
 
 .semi-bold-text {
-  font-weight: 600
+  font-weight: 500
 }
 
 .main-header {
@@ -66,7 +66,7 @@ li {
   margin: 4vh 0
 }
 
-.tutor-cards {
+.db-tutor-cards {
   max-width: 80vw;
   margin-bottom: 7vh
 }
@@ -88,6 +88,7 @@ li {
 .logout-btn {
   background-color: #dadada
 }
+
 
 .login-error {
   margin-top: 1.5vh;
@@ -114,16 +115,29 @@ footer {
   color: white
 }
 
+.tutor-card-headings{
+  margin-top: 2vh
+}
+
+.selected-tutor-card {
+  padding: 0
+}
+
 .scheduler {
   background-color: grey;
-  padding: 3rem 2rem 3rem 2rem;
+  padding: 1.7rem 1rem;
   border-radius: 2%;
+  max-width: 80vw
+}
+
+.schedule-message {
+  min-width: 100%
 }
 
 .schedulertextarea {
-  width: 25rem;
-  height: 10rem;
   border-radius: 2%;
+  min-width: 100%;
+  resize: none
 }
 
 .tutorarticle {
