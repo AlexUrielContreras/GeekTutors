@@ -15,7 +15,7 @@ function Dashboard(props) {
   const enrollStudentFunction = async (tutorId) => {
     try {
       const token = Auth.getToken()
-      const updatedUser = await enrollStudent({
+      await enrollStudent({
         variables: { token, tutorId }
       })
       props.setCurrentTab("tutor")
@@ -27,7 +27,7 @@ function Dashboard(props) {
   const unenrollStudentFunction = async (tutorId) => {
     try {
       const token = Auth.getToken()
-      const updatedUser = await unenrollStudent({
+      await unenrollStudent({
         variables: { token, tutorId }
       })
       window.location.reload()

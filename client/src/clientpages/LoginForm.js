@@ -1,6 +1,6 @@
 // see SignupForm.js for comments
 import React, { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 
 import { useMutation } from '@apollo/client'
 import { LOGIN } from '../utils/mutations';
@@ -29,20 +29,23 @@ const LoginForm = () => {
     }
 
     setValidated(true)
-    
-    try {
-      const {data} = await logIn({
-        variables: {...userFormData}
-      })
 
-      Auth.login(data.login.token);
-
-    } catch (e) {
-      setErrorMessage(true)
-      console.log(e);
+    if (!errorMessage) {
+      try {
+        const {data} = await logIn({
+          variables: {...userFormData}
+        })
+  
+        Auth.login(data.login.token);
+  
+      } catch (e) {
+        setErrorMessage(true)
+        console.log(e);
+      }
+  
+    };
     }
-
-  };
+    
 
   return (
     <>

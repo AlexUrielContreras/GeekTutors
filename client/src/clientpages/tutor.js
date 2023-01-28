@@ -12,16 +12,20 @@ function Tutor(props) {
   if (!data.GetCurrentUser.selectedTutor) refetch();
 
   return (
-    <Container>
-      <Row className='mt-5'>
-        <Col>
-          <Card className="tutorcard" style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={data.GetCurrentUser.selectedTutor.image} />
-            <Card.Body>
-              <Card.Title>{data.GetCurrentUser.selectedTutor.firstName} {data.GetCurrentUser.selectedTutor.lastName}</Card.Title>
-              <Card.Text>Articles by {data.GetCurrentUser.selectedTutor.firstName}</Card.Text>
-            </Card.Body>
-            <div className="list-group">
+    <Container className='mt-4'>
+      <Row lg={2} className='justify-content-around align-items-center'>
+
+        <Card style={{ width: "20rem" }} className='selected-tutor-card'>
+          <Card.Img variant="top" src={data.GetCurrentUser.selectedTutor.image} />
+          
+          <Card.Body>
+            <Card.Title as='h2' className='bold-text'>{data.GetCurrentUser.selectedTutor.firstName} {data.GetCurrentUser.selectedTutor.lastName}</Card.Title>
+
+            <Card.Title as='h3' className='semi-bold-text tutor-card-headings'>Bio</Card.Title>
+            <Card.Text>{data.GetCurrentUser.selectedTutor.description}</Card.Text>
+
+            <Card.Title as='h3' className='semi-bold-text tutor-card-headings'>Articals</Card.Title>
+            <div>
               {data.GetCurrentUser.selectedTutor.articles.map(element => (
                 <a
                   onClick={(e) => {
@@ -32,25 +36,13 @@ function Tutor(props) {
                   className="list-group-item list-group-item-action">
                   {element.name}
                 </a>
-              ))
-              }
+              ))}
             </div>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="tutorbio" style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={data.GetCurrentUser.selectedTutor.image} />
-            <Card.Body>
-              <Card.Title>{data.GetCurrentUser.selectedTutor.firstName} {data.GetCurrentUser.selectedTutor.lastName}</Card.Title>
-              <Card.Text>Bio</Card.Text>
-              <Card.Text>{data.GetCurrentUser.selectedTutor.description}</Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col>
-          <MeetingLink />
-        </Col>
+          </Card.Body>
+        </Card>
+      
+        <MeetingLink />
+      
       </Row>
     </Container>
   );

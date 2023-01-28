@@ -1,21 +1,21 @@
 [
     {
-        "name":"Intro into computer science",
+        "name":"Intro into Computer Science",
         "image":"https://upload.wikimedia.org/wikipedia/commons/a/ab/Pexels-luis-gomes-546819.jpg",
         "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac auctor magna, eget placerat neque.\nVestibulum nec consequat ante. Suspendisse nec nulla ut est posuere semper sit amet et odio. Orci varius natoque\npenatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam ac magna elementum, sollicitudin enim eu,\npulvinar nisi. Aenean hendrerit et ante a scelerisque."
     },
     {
-        "name":"HTML, NPM, and Javascript!",
+        "name":"HTML5, NPM, and React",
         "image":"https://cc0.photo/wp-content/uploads/2016/01/Code-editors-on-Windows-10-scaled.jpg",
         "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac auctor magna, eget placerat neque.\nVestibulum nec consequat ante. Suspendisse nec nulla ut est posuere semper sit amet et odio. Orci varius natoque\npenatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam ac magna elementum, sollicitudin enim eu,\npulvinar nisi. Aenean hendrerit et ante a scelerisque."
     },
     {
-        "name":"HTML, CSS, and React",
+        "name":"HTML5, CSS, and Javascript",
         "image":"https://www.seobility.net/en/wiki/images/a/a6/HTML-Doctype.png",
         "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac auctor magna, eget placerat neque.\nVestibulum nec consequat ante. Suspendisse nec nulla ut est posuere semper sit amet et odio. Orci varius natoque\npenatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam ac magna elementum, sollicitudin enim eu,\npulvinar nisi. Aenean hendrerit et ante a scelerisque."
     },
     {
-        "name":"How to use Word professionally",
+        "name":"How to use Words Professionally",
         "image":"https://live.staticflickr.com/5044/5251378117_d57920fe6e_b.jpg",
         "body":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac auctor magna, eget placerat neque.\nVestibulum nec consequat ante. Suspendisse nec nulla ut est posuere semper sit amet et odio. Orci varius natoque\npenatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam ac magna elementum, sollicitudin enim eu,\npulvinar nisi. Aenean hendrerit et ante a scelerisque."
     }

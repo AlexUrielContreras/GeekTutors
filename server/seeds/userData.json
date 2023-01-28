@@ -4,14 +4,14 @@
         "lastName":"Burch",
         "image":"https://media.istockphoto.com/photos/portrait-of-a-happy-latin-american-teacher-at-the-school-picture-id687830554?b=1&k=20&m=687830554&s=170667a&w=0&h=OCC-gdrMn_GcMx9BlvOF-Lu4hYp5mBPX8TIG9dDj9E4=",
         "email":"legitemail1@email.com",
-        "description":"Experienced tutor specializing in frontend web development technologies.",
+        "description":"Experienced tutor specializing in Front-End Web Development technologies.",
         "password":"123123",
         "isTutor":true,
         "subjectsOffered":[
-            "HTML",
-            "CSS",
-            "JAVASCRIPT",
-            "bootstrap"
+            "HTML5",
+            "CSS3",
+            "Javascript",
+            "Bootstrap"
         ]
     },
     {
@@ -19,13 +19,13 @@
         "lastName":"Contreras",
         "image":"https://media.istockphoto.com/photos/happy-teacher-standing-in-corridor-picture-id482414358?k=20&m=482414358&s=612x612&w=0&h=Ht02GsqCEtAdYzA3Gv3rBXAo6ttotMSrzuG2KfmHvJQ=",
         "email":"legitemail2@email.com",
-        "description":"Full Stack tutor with specialties with databases.",
+        "description":"Full-Stack tutor with specialties with databases.",
         "password":"123123",
         "isTutor":true,
         "subjectsOffered":[
             "MongoDb",
             "SQL",
-            "JAVASCRIPT",
+            "Javascript",
             "NPM"
         ]
     },
@@ -38,7 +38,7 @@
         "password":"123123",
         "isTutor":true,
         "subjectsOffered":[
-            "HTML",
+            "HTML5",
             "Typescript",
             "Node",
             "NPM"
@@ -53,7 +53,7 @@
         "password":"123123",
         "isTutor":true,
         "subjectsOffered":[
-            "HTML",
+            "HTML5",
             "React",
             "Javascript",
             "Nodejs"
