@@ -4,13 +4,13 @@ import Auth from "../utils/auth";
 
 function DashboardTutorCard({tutor, currentUser, enrollStudent, unenrollStudent}) {
 
-    const { userData } = currentUser
+    const { data } = currentUser
   
     const renderSaveButton = () => {
         try {
             if (Auth.loggedIn()) {
 
-                if (userData.GetCurrentUser.selectedTutor == null || userData.GetCurrentUser.selectedTutor._id !== tutor._id) {
+                if (data.GetCurrentUser.selectedTutor == null || data.GetCurrentUser.selectedTutor._id !== tutor._id) {
                     return <button onClick={(e) => {
                         
                         enrollStudent(tutor._id)
@@ -48,7 +48,7 @@ function DashboardTutorCard({tutor, currentUser, enrollStudent, unenrollStudent}
             
             {renderSaveButton()}  
         </Card>
-     
+
 
     )
 }

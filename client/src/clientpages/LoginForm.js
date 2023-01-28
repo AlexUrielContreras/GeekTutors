@@ -29,20 +29,23 @@ const LoginForm = () => {
     }
 
     setValidated(true)
-    
-    try {
-      const {data} = await logIn({
-        variables: {...userFormData}
-      })
 
-      Auth.login(data.login.token);
-
-    } catch (e) {
-      setErrorMessage(true)
-      console.log(e);
+    if (!errorMessage) {
+      try {
+        const {data} = await logIn({
+          variables: {...userFormData}
+        })
+  
+        Auth.login(data.login.token);
+  
+      } catch (e) {
+        setErrorMessage(true)
+        console.log(e);
+      }
+  
+    };
     }
-
-  };
+    
 
   return (
     <>
